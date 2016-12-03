@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 var tri = 0;
+var transposedTriangels = [];
 
 function isTriangle(line) {
   if (line[0] + line[1] > line[2]
@@ -20,8 +21,14 @@ function getSecurityCode(input) {
         return line.trim().split(/\s+/).map(side => +side)
       });
 
-
     
+for(var i = 0; i < triangles.length; i += 3){
+    for(let j = 0; j < 3; j++){
+       // transposedTriangels.push(triangles[i + 0][j],triangles[i + 1][j],triangles[i + 2][j]);
+        console.log(triangles[i + 0][j],triangles[i + 1][j],triangles[i + 2][j])
+    }
+}
+
   triangles.forEach(function (line) {
     // ignore empty lines;
     if (line.length) {
@@ -35,6 +42,6 @@ function getSecurityCode(input) {
 
 }
 
-getSecurityCode("./input3.txt");
+getSecurityCode("./day3_input.txt");
 
 
